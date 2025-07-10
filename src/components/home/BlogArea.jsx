@@ -15,6 +15,8 @@ const BlogArea = () => {
     });
   }, []);
 
+
+  //ultimele 3 articole de pe blog
   useEffect(() => {
     const getBlogPosts = async () => {
       try {

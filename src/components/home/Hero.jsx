@@ -9,6 +9,7 @@ import {
   Button,
   Center,
   Image,
+  Link,
 } from '@chakra-ui/react';
 
 const ImageHero = (props) => (
@@ -65,25 +66,36 @@ const Hero = () => {
             >
               Cultura și patrimoniul, punți între generații.
             </Text>
-            <Stack direction={{ base: 'column', md: 'row' }} gapY="3">
-              <Button
-                px={'.5rem'}
-                bg={'contrast'}
-                size={{ base: 'lg', md: 'xl' }}
-                color={'main'}
-                _hover={{ transform: 'translateY(-4px)' }}
-              >
-                Obiective
-              </Button>
-              <Button
-                variant="outline"
-                size={{ base: 'lg', md: 'xl' }}
-                color="bg"
-                _hover={{ color: 'main' }}
-                px={'.5rem'}
-              >
-                Trasee
-              </Button>
+            <Stack
+              direction={{ base: 'column', md: 'row' }}
+              gapY="3"
+              alignItems={'center'}
+              justifyContent={'center'}
+            >
+              <Link href={'/obiective?page=1&pageSize=10'}>
+                <Button
+                  w={'200px'}
+                  px={'.5rem'}
+                  bg={'contrast'}
+                  size={{ base: 'lg', md: 'xl' }}
+                  color={'main'}
+                  _hover={{ transform: 'translateY(-4px)' }}
+                >
+                  Obiective
+                </Button>
+              </Link>
+              <Link href={'/trasee'}>
+                <Button
+                  w={'200px'}
+                  variant="outline"
+                  size={{ base: 'lg', md: 'xl' }}
+                  color="bg"
+                  _hover={{ color: 'main' }}
+                  px={'.5rem'}
+                >
+                  Trasee
+                </Button>
+              </Link>
             </Stack>
           </Stack>
         </SimpleGrid>

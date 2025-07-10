@@ -12,6 +12,7 @@ const Footer = () => {
       color={'white'}
       alignItems={'center'}
       justifyContent={'center'}
+      h={'320px'}
     >
       <Stack
         w={'full'}

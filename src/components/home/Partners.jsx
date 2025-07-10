@@ -9,7 +9,6 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-import { partnersData } from '../static/texts';
 import TitleArea from '../TitleArea';
 
 const Partners = () => {
@@ -38,7 +37,7 @@ const Partners = () => {
             'linear-gradient(90deg, transparent, white 10%, white 80%, transparent)',
         }}
       >
-        <HStack
+        {/* <HStack
           className={'animatedDiv'}
           w={'max-content'}
           py={'2rem'}
@@ -76,7 +75,7 @@ const Partners = () => {
               </HStack>
             </Link>
           ))}
-        </HStack>
+        </HStack> */}
       </HStack>
     </Stack>
   );

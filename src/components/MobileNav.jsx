@@ -1,12 +1,30 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useToggle } from './Context';
 import { HStack, Stack, Text, Link, Icon } from '@chakra-ui/react';
-import { navbarMenu } from './static/texts';
 import { LuX } from 'react-icons/lu';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const MobileNav = () => {
   const { isOpen, toggle } = useToggle();
+  const [loading, setLoading] = useState(true);
+  const [navMenu, setNavMenu] = useState([]);
+
+  useEffect(() => {
+    const getNavbar = async () => {
+      try {
+        const res = await axios.get('/api/webInfo/navbar');
+        const data = res.data.navbar;
+        setNavMenu(data.navMenu);
+      } catch (error) {
+        toast.error('A aparut o eroare la preluarea obiectivelor: ' + error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getNavbar();
+  }, []);
   return (
     <Stack
       className="mobileNav"
@@ -30,7 +48,7 @@ const MobileNav = () => {
         </Icon>
       </HStack>
       <Stack gap={'5rem'} w={'full'} alignItems={'flex-end'}>
-        {navbarMenu?.map((item) => (
+        {navMenu?.map((item) => (
           <Link
             w={'fit-content'}
             onClick={toggle}

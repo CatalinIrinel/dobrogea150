@@ -1,3 +1,4 @@
+'use client';
 import {
   Container,
   SimpleGrid,
@@ -13,34 +14,41 @@ import {
 import { LuImage } from 'react-icons/lu';
 
 const ContactForm = (props) => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('mesaj trimis');
+  };
   return (
-    <Stack as="form" gap={{ base: '6', md: '8' }} {...props}>
-      <Stack gap={{ base: '4', md: '6' }}>
-        <Field.Root>
-          <Field.Label>Name</Field.Label>
-          <Input size="lg" />
-        </Field.Root>
-        <Field.Root>
-          <Field.Label>E-Mail</Field.Label>
-          <Input size="lg" />
-        </Field.Root>
-        <Field.Root>
-          <Field.Label>Message</Field.Label>
-          <Textarea
-            placeholder="Tell us how we can assist you today"
-            size="lg"
-            rows={4}
-            resize="none"
-          />
-        </Field.Root>
+    <form onSubmit={submitHandler}>
+      <Stack gap={{ base: '6', md: '8' }} {...props}>
+        <Stack gap={{ base: '4', md: '6' }}>
+          <Field.Root>
+            <Field.Label>Nume</Field.Label>
+            <Input size="lg" />
+          </Field.Root>
+          <Field.Root>
+            <Field.Label>E-Mail</Field.Label>
+            <Input size="lg" />
+          </Field.Root>
+          <Field.Root>
+            <Field.Label>Mesaj</Field.Label>
+            <Textarea
+              placeholder="Spune-ne cum te putem ajuta"
+              size="lg"
+              rows={4}
+              resize="none"
+            />
+          </Field.Root>
+        </Stack>
+        <Button
+          type={'submit'}
+          size={{ base: 'lg', md: 'xl' }}
+          alignSelf={{ base: 'stretch', sm: 'start' }}
+        >
+          Trimite
+        </Button>
       </Stack>
-      <Button
-        size={{ base: 'lg', md: 'xl' }}
-        alignSelf={{ base: 'stretch', sm: 'start' }}
-      >
-        Submit
-      </Button>
-    </Stack>
+    </form>
   );
 };
 
@@ -83,8 +91,8 @@ const SectionHeader = (props) => {
   );
 };
 
-export const Block = () => (
-  <Container py={{ base: '16', md: '24' }}>
+export const ContactPage = () => (
+  <Container py={{ base: '16', md: '24' }} px={'1rem'}>
     <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: '12', md: '16' }}>
       <Stack gap={{ base: '8', md: '12' }}>
         <SectionHeader

@@ -1,9 +1,9 @@
-import ProjectsPage from '@/components/pages/ProjectsPage';
+import Projects from '@/components/pages/Projects';
 
 export default function Proiecte() {
   return (
     <>
-      <ProjectsPage />
+      <Projects />
     </>
   );
 }

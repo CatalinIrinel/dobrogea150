@@ -2,13 +2,15 @@ import mongoose from 'mongoose';
 
 const projectSchema = new mongoose.Schema(
   {
-    dataAos: { type: String },
-    dataAosDelay: { type: Number },
-    name: { type: String, required: true, unique: true },
+    dateStart: { type: String },
+    dateEnd: { type: String },
+    title: { type: String, required: true, unique: true },
     description: { type: String, required: true },
     link: { type: String, required: true },
-    techId: [],
     image: { type: String, required: true },
+    galleryImages:[],
+    state:{type:String},
+    slug:{type:String, required:true,}
   },
   {
     timestamps: true,

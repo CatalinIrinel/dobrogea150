@@ -22,8 +22,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={'body'}>
         {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> */}
-        <ToastContainer />
+
         <ToggleProvider>
+          <ToastContainer />
           <Providers>
             <MobileNav />
             <Navbar />

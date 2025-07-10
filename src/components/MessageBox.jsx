@@ -4,11 +4,11 @@ import { Alert, AlertIcon, Box } from '@chakra-ui/react';
 function MessageBox(props) {
   return (
     <Box w="full" h={'50px'}>
-      {' '}
-      <Alert status={props.status || 'info'}>
-        <AlertIcon />
-        {props.children}
-      </Alert>
+      <Alert.Root status={props.status || 'info'}>
+        <Alert.Indicator />
+        <Alert.Title>{props.title || 'Informativ'}</Alert.Title>
+        <Alert.Description>{props.message}</Alert.Description>
+      </Alert.Root>
     </Box>
   );
 }

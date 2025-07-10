@@ -1,4 +1,4 @@
-import ContactPage from '@/components/pages/ContactPage';
+import { ContactPage } from '@/components/pages/Contact';
 
 const api =
   process.env.NODE_ENV === 'production'
@@ -50,7 +50,6 @@ export async function generateMetadata({ params }) {
 }
 
 const Contact = async () => {
-
   return (
     <>
       <ContactPage />

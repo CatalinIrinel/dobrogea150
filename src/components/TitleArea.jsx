@@ -1,13 +1,20 @@
 'use client';
-import { Heading } from '@chakra-ui/react';
+import { Heading, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 const TitleArea = (props) => {
   const { text } = props;
   return (
-    <Heading as={'h2'} fontSize={'4xl'} color={'main'}>
-      {text}
-    </Heading>
+    <Stack w={'full'} alignItems={'center'} justifyContent={'center'}>
+      <Heading
+        as={'h2'}
+        fontSize={'4xl'}
+        color={'main'}
+        textTransform={'capitalize'}
+      >
+        {text}
+      </Heading>
+    </Stack>
   );
 };
 

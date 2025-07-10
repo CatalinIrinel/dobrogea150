@@ -1,0 +1,129 @@
+{
+  "navbar": {
+    "logo": "/images/logo.png",
+    "navMenu": [
+      { "text": "Home", "link": "/" },
+      { "text": "About", "link": "/about" },
+      { "text": "Contact", "link": "/contact" }
+    ]
+  },
+  "aboutPage": {
+    "titlu": "About Us",
+    "texte": ["We are passionate about building scalable solutions."],
+    "imagini": ["/images/bgHero.png"]
+  },
+  "categoriiObiective": [
+    {
+      "text": "Lacasuri de cult",
+      "icon": "GiChurch",
+      "slug": "lacasuri-cult",
+      "colSpan": 4,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Regalitate",
+      "icon": "GiImperialCrown",
+      "slug": "regalitate",
+      "colSpan": 2,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Muzee",
+      "icon": "GiGreekTemple ",
+      "slug": "muzee",
+      "colSpan": 3,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Cetăți",
+      "icon": "GiQaitbayCitadel ",
+      "slug": "cetati",
+      "colSpan": 4,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Statui",
+      "icon": "/images/statui.webp",
+      "slug": "statui",
+      "colSpan": 2,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Faruri",
+      "icon": "GiLighthouse ",
+      "slug": "faruri",
+      "colSpan": 3,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Testamentul otoman",
+      "icon": "/images/otoman.webp",
+      "slug": "testamentul-otoman",
+      "colSpan": 3,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Patrimoniul multicultural",
+      "icon": "GiColumnVase ",
+      "slug": "patrimoniul-multicultural",
+      "colSpan": 4,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Educatie si cultura",
+      "icon": "GiSpellBook ",
+      "slug": "educatie-cultura",
+      "colSpan": 2,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Cimitire Istorice",
+      "icon": "/images/carliban.webp",
+      "slug": "cimitire-istorice",
+      "colSpan": 3,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Patrimoniul arheologic",
+      "icon": "GiMagnifyingGlass ",
+      "slug": "patrimoniul-arheologic",
+      "colSpan": 3,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Personalitati dobrogene",
+      "icon": "GiChurch ",
+      "slug": "personalitati-dobrogene",
+      "colSpan": 4,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Monumente UNESCO",
+      "icon": "GiImperialCrown",
+      "slug": "monumente-unesco",
+      "colSpan": 2,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Obiective Naturale",
+      "icon": "GiTreeGrowth",
+      "slug": "obiective-naturale",
+      "colSpan": 3,
+      "bgImage": "/images/hero.png"
+    },
+    {
+      "text": "Obiective tematice si de agrement",
+      "icon": "GiChurch",
+      "slug": "obiective-tematice-agrement",
+      "colSpan": 4,
+      "bgImage": "/images/hero.png"
+    }
+  ],
+  "contact": {
+    "adresa": "123 Main St, NY",
+    "email": "info@example.com",
+    "telefon": "+1 555-1234",
+    "titluFormular": "Reach out to us for any inquiries",
+    "titlu": "Contacteaza-ne"
+  }
+}

@@ -1,52 +1,74 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Card,
-  Badge,
   Container,
-  Grid,
-  GridItem,
   Image,
   Icon,
   Stack,
   Text,
   HStack,
+  Link,
 } from '@chakra-ui/react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import * as GiIcon from 'react-icons/gi';
 
-import { categoryInfoHome } from '../static/texts';
-
-const CategoryCard = (props) => {
-  const { icon, title, image } = props;
+const CategoryCard = ({ categorieInfo }) => {
+  const { icon, bgImage, text, slug } = categorieInfo;
+  const isImage = typeof icon === 'string' && icon.startsWith('/');
+  const IconCustom = GiIcon[icon];
   return (
-    <Card.Root
-      variant="subtle"
-      w={'350px'}
-      height="350px"
-      bgImage={`url(${image})`}
-      bgPos={'center'}
-      bgRepeat={'no-repeat'}
-      bgSize={'cover'}
-      fontSize={'bold'}
-    >
-      <Card.Body
-        w={'full'}
-        alignItems={'center'}
-        justifyContent={'center'}
-        color={'bg'}
+    <Link href={`/obiective/${slug}`}>
+      <Card.Root
+        variant="subtle"
+        w={{ base: '175px', lg: '350px' }}
+        height={{ base: '175px', lg: '350px' }}
+        bgImage={`url(${bgImage})`}
+        bgPos={'center'}
+        bgRepeat={'no-repeat'}
+        bgSize={'cover'}
+        fontSize={'bold'}
       >
-        {typeof icon === 'string' ? (
-          <Image src={icon} w={'100px'} alt={title} filter={'invert(1)'} />
-        ) : (
-          <Icon fontSize={'6rem'}>{icon}</Icon>
-        )}
-        <Text >{title}</Text>
-      </Card.Body>
-    </Card.Root>
+        <Card.Body
+          w={'full'}
+          alignItems={'center'}
+          justifyContent={'center'}
+          color={'bg'}
+        >
+          {isImage ? (
+            <Image src={icon} w={'100px'} alt={text} filter={'invert(1)'} />
+          ) : (
+            <Icon fontSize={'6rem'}>
+              <IconCustom />
+            </Icon>
+          )}
+          <Text textAlign={'center'}>{text}</Text>
+        </Card.Body>
+      </Card.Root>
+    </Link>
   );
 };
 
 const Categories = () => {
+  const [categorii, setCategorii] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getCategories = async () => {
+      try {
+        const res = await axios.get('/api/webInfo/categorii');
+        const data = res.data.categoriiObiective;
+        setCategorii(data);
+      } catch (error) {
+        toast.error('A aparut o eroare la preluarea categoriilor: ' + error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getCategories();
+  }, []);
   return (
     <Container maxW="100vw" py={'2rem'}>
       <Stack
@@ -60,13 +82,8 @@ const Categories = () => {
           justifyContent={'center'}
           flexWrap={'wrap'}
         >
-          {categoryInfoHome.map((category) => (
-            <CategoryCard
-              icon={category.icon}
-              title={category.text}
-              key={category.text}
-              image={category.bgImage}
-            />
+          {categorii.map((category) => (
+            <CategoryCard key={category.text} categorieInfo={category} />
           ))}
         </HStack>
       </Stack>
